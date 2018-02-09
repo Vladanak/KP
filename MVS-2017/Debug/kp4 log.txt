@@ -1,0 +1,234 @@
+
+----- Протокол ------ Дата: 20.12.2017 00:01:43 --------
+----- Параметры --------
+-in: in.txt
+-out: out.txt
+-log: log.txt
+---- Исходные данные ------
+Количество символов: 391
+Проигнорировано	   :  0
+Количество строк   : 28
+---- Таблица слов ------
+№    Line      isLiteral      Token               
+0    0         false          STANDART            
+1    0         false          ;                   
+2    1         false          num                 
+3    1         false          function            
+4    1         false          sum                 
+5    1         false          (                   
+6    1         false          num                 
+7    1         false          a                   
+8    1         false          ,                   
+9    1         false          num                 
+10   1         false          b                   
+11   1         false          ,                   
+12   1         false          num                 
+13   1         false          c                   
+14   1         false          )                   
+15   2         false          {                   
+16   3         false          def                 
+17   3         false          num                 
+18   3         false          result              
+19   3         false          ;                   
+20   4         false          result              
+21   4         false          =                   
+22   4         false          (                   
+23   4         false          a                   
+24   4         false          +                   
+25   4         false          b                   
+26   4         false          )                   
+27   4         false          *                   
+28   4         false          c                   
+29   4         false          *                   
+30   4         false          b                   
+31   4         false          ;                   
+32   5         false          out                 
+33   5         false          (                   
+34   5         false          result              
+35   5         false          )                   
+36   5         false          ;                   
+37   6         false          back                
+38   6         false          result              
+39   6         false          ;                   
+40   7         false          }                   
+41   9         false          def                 
+42   9         false          num                 
+43   9         false          first               
+44   9         false          ;                   
+45   10        false          def                 
+46   10        false          str                 
+47   10        false          message             
+48   10        false          ;                   
+49   11        false          def                 
+50   11        false          num                 
+51   11        false          second              
+52   11        false          ;                   
+53   12        false          def                 
+54   12        false          num                 
+55   12        false          k                   
+56   12        false          ;                   
+57   13        false          def                 
+58   13        false          str                 
+59   13        false          s                   
+60   13        false          ;                   
+61   14        false          def                 
+62   14        false          num                 
+63   14        false          o                   
+64   14        false          ;                   
+65   15        false          def                 
+66   15        false          num                 
+67   15        false          rez                 
+68   15        false          ;                   
+69   16        false          first               
+70   16        false          =                   
+71   16        true           4                   
+72   16        false          ;                   
+73   17        false          second              
+74   17        false          =                   
+75   17        true           25                  
+76   17        false          ;                   
+77   18        false          message             
+78   18        false          =                   
+79   18        true           "Hello World"       
+80   18        false          ;                   
+81   19        false          k                   
+82   19        false          =                   
+83   19        false          strlen              
+84   19        false          (                   
+85   19        false          message             
+86   19        false          )                   
+87   19        false          ;                   
+88   20        false          s                   
+89   20        false          =                   
+90   20        false          substr              
+91   20        false          (                   
+92   20        false          message             
+93   20        false          ,                   
+94   20        true           1                   
+95   20        false          ,                   
+96   20        true           2                   
+97   20        false          )                   
+98   20        false          ;                   
+99   21        false          rez                 
+100  21        false          =                   
+101  21        false          sum                 
+102  21        false          (                   
+103  21        true           18                  
+104  21        false          ,                   
+105  21        false          first               
+106  21        false          ,                   
+107  21        false          second              
+108  21        false          )                   
+109  21        false          ;                   
+110  22        false          o                   
+111  22        false          =                   
+112  22        false          stepen              
+113  22        false          (                   
+114  22        false          second              
+115  22        false          ,                   
+116  22        false          first               
+117  22        false          )                   
+118  22        false          ;                   
+119  23        false          out                 
+120  23        false          (                   
+121  23        false          o                   
+122  23        false          )                   
+123  23        false          ;                   
+124  24        false          out                 
+125  24        false          (                   
+126  24        false          message             
+127  24        false          )                   
+128  24        false          ;                   
+129  25        false          out                 
+130  25        false          (                   
+131  25        false          rez                 
+132  25        false          )                   
+133  25        false          ;                   
+134  26        false          out                 
+135  26        false          (                   
+136  26        false          k                   
+137  26        false          )                   
+138  26        false          ;                   
+139  27        false          out                 
+140  27        false          (                   
+141  27        false          s                   
+142  27        false          )                   
+143  27        false          ;                   
+
+---- Таблица лексем ------
+1         B;
+2         tfi(ti,ti,ti)
+3         {
+4         dti;
+5         i=(i+i)*i*i;
+6         o(i);
+7         bi;
+8         }
+10        dti;
+11        dti;
+12        dti;
+13        dti;
+14        dti;
+15        dti;
+16        dti;
+17        i=l;
+18        i=l;
+19        i=l;
+20        i=e(i);
+21        i=s(i,l,l);
+22        i=i(l,i,i);
+23        i=p(i,i);
+24        o(i);
+25        o(i);
+26        o(i);
+27        o(i);
+28        o(i);
+---- Таблица идентификаторов ------
+№    Name      DataType     IdType         Ind tokenlist    Value               
+0    sum       num          function       4                0
+1    a         num          parametr       7                0
+2    b         num          parametr       10               0
+3    c         num          parametr       13               0
+4    result    num          variable       18               0
+5    first     num          variable       43               4
+6    message   str          variable       47               "Hello World"
+7    second    num          variable       51               25
+8    k         num          variable       55               0
+9    s         str          variable       59               
+10   o         num          variable       63               0
+11   rez       num          variable       67               0
+12   strlen    num          vstroen        83               0
+13   substr    str          vstroen        90               
+14   stepen    num          vstroen        112              0
+
+---------Промежуточный код------------------------------
+00 B;
+01 tfi(ti,ti,ti)
+02 {
+03 dti;
+04 i=(i+i)*i*i;
+05 o(i);
+06 bi;
+07 }
+09 dti;
+10 dti;
+11 dti;
+12 dti;
+13 dti;
+14 dti;
+15 dti;
+16 i=l;
+17 i=l;
+18 i=l;
+19 i=e(i);
+20 i=s(i,l,l);
+21 i=i(l,i,i);
+22 i=p(i,i);
+23 o(i);
+24 o(i);
+25 o(i);
+26 o(i);
+27 o(i);
+
+Ошибка 123: [Семантическая] Отсутствие главной функции, строка 0, позиция 0
+

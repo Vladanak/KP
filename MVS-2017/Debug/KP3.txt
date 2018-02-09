@@ -1,0 +1,32 @@
+STANDART;
+num function sum(num a,num b,num c)
+{
+def num result;
+result = (a+b)*c*b;
+out (result);
+back result;
+}
+
+glavn
+{
+def num first;
+def str message;
+def num second;
+def num k;
+def str s;
+def num o;
+def num rez;
+first=4;
+second=25;
+message="Hello World";
+k=strlen(message);
+s=substr(message,1,2);
+rez=sum(18,first,second);
+o=stepen(message,first);
+out(o);
+out(message);
+out(rez);
+out(k);
+out(s);
+back k;
+}

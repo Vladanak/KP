@@ -1,0 +1,3 @@
+﻿D:\Программы\VS\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: промежуточный каталог (Debug\) содержит файлы, которые используются совместно с другим проектом (LPLab16.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  LPLab16.vcxproj -> D:\FIRST\KP\MVS-2017\Debug\MVS-2017.exe
+  LPLab16.vcxproj -> D:\FIRST\KP\MVS-2017\Debug\MVS-2017.pdb (Partial PDB)
