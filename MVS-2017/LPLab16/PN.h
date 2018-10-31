@@ -1,5 +1,7 @@
 #pragma once
 #include "stdafx.h"
+
+
 struct PN
 {
 	LT::Entry result[10000]; // Хранит преобразованное выражение в польской нотации

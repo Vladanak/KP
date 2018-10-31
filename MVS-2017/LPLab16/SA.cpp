@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "SA.h"
 
+
 bool  SemanticAnalyze(LT::LexTable &Lextable, In::IN &InStruct, IT::IdTable &idtable, Log::LOG &log)
 {
 	bool Standart_LIB = false;

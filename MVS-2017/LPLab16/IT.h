@@ -8,6 +8,7 @@
 #define INT_MAXSIZE     65536       //максимально допустимое значение
 #define INT_MINUS_MAXSIZE   -65536  //минимально допустимое значение
 
+
 namespace IT
 {
 	enum IDDATATYPE { NUM = 1, STR = 2 };			        //типы данных идентификаторов
@@ -53,5 +54,4 @@ namespace IT
 		char id[ID_MAXSIZE]);						//идентификатор
 	int GetSize(IdTable &idtable);					//получить размер
 	void SetValue(IdTable &idtable, int, char*);	//задать значение идентификатора
-
 }

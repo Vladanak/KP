@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include <iostream>
+
+
 namespace Error
 {
 	//массив ошибок

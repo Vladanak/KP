@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "Generation.h"
 #include "SA.h"
+
+
 int _tmain(int argc, _TCHAR* argv[])
 {
 	setlocale(LC_ALL, "");
@@ -54,4 +56,3 @@ int _tmain(int argc, _TCHAR* argv[])
 	}
 	return 0;
 }
-

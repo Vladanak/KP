@@ -38,6 +38,7 @@
 #define LEX_TYPE_LITERAL	"literal"
 #define LEX_TYPE_STANDART	"vstroen"
 
+
 namespace LT
 {
 	struct Entry

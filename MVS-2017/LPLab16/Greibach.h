@@ -2,6 +2,7 @@
 #include "stdafx.h"
 typedef short GRBALPHABET;                      //объ€вление своего пользовательского типа(тип short)
 
+
 namespace GRB
 {
 	struct Rule									//правило в грамматике √рейбах

@@ -3,8 +3,8 @@
 namespace LeX
 {
 	Graph graph[] =                                       
-	{
-		{ LEX_STANDART, FST::FST(GRAPH_STANDART) },               //массив содержащий лексемы и соответствующие им графы
+	{   //массив содержащий лексемы и соответствующие им графы
+		{ LEX_STANDART, FST::FST(GRAPH_STANDART) }, 
 	    { LEX_NUM, FST::FST(GRAPH_NUM) },
 		{ LEX_STRLEN, FST::FST(GRAPH_STRLEN) },
 		{ LEX_SUBSTR, FST::FST(GRAPH_SUBSTR) },

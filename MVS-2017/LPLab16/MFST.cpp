@@ -1,7 +1,9 @@
 #include "stdafx.h"
 
+
 int FST_TRACE_n = -1;
 char rbuf[205], sbuf[205], lbuf[1024];
+
 
 namespace MFST
 {
@@ -44,7 +46,8 @@ namespace MFST
 		grebach = pgrebach; //Грейбах
 		lex = plex; //рез работы лекс анализатора
 		lenta = new short[lenta_size = lex.Lextable.size];//размер ленты = текущий размер таблицы лексем
-		for (int k = 0; k < lenta_size; k++)lenta[k] = TS(lex.Lextable.table[k].lexema);//заносит в ленту терминалы
+		for (int k = 0; k < lenta_size; k++)
+			lenta[k] = TS(lex.Lextable.table[k].lexema);//заносит в ленту терминалы
 		lenta_position = 0;
 		st.push(grebach.stbottomT);//добавляет дно стека
 		st.push(grebach.startN);//добавляет стартовый символ
@@ -77,25 +80,33 @@ namespace MFST
 						rc = reststate(log) ? NS_NORULECHAIN : NS_NORULE; //восстановить состояние автомата
 					};
 				}
-				else rc = NS_ERROR;//неизвестный нетерминальный символ грамматики
+				else 
+					rc = NS_ERROR;//неизвестный нетерминальный символ грамматики
 			}
-			else if ((st.top() == lenta[lenta_position]))//если текущий символ ленты равен вершине стека
-			{
-				lenta_position++; //продвигаем ленту
-				st.pop();//вершина стека
-				nrulechain = -1; //номер текущего правила равен -1
-				rc = TS_OK;
-				MFST_TRACE3(log)
-			}
-			else { MFST_TRACE4(log, "TS_NOK/NS_NORULECHIN") rc = reststate(log) ? TS_NOK : NS_NORULECHAIN; };
+			else 
+				if ((st.top() == lenta[lenta_position]))//если текущий символ ленты равен вершине стека
+				{
+					lenta_position++; //продвигаем ленту
+					st.pop();//вершина стека
+					nrulechain = -1; //номер текущего правила равен -1
+					rc = TS_OK;
+					MFST_TRACE3(log)
+				}
+				else 
+				{ 
+					MFST_TRACE4(log, "TS_NOK/NS_NORULECHIN") 
+					rc = reststate(log) ? TS_NOK : NS_NORULECHAIN; 
+				};
 		}
-		else { rc = LENTA_END; MFST_TRACE4(log, "LENTA_END") };
+		else 
+			rc = LENTA_END; MFST_TRACE4(log, "LENTA_END") ;
 		return rc;
 	};
 
 	bool Mfst::push_chain(GRB::Rule::Chain chain) //поместить цепочку правила в стек (цепочка правила)
 	{
-		for (int k = chain.size - 1; k >= 0; k--)st.push(chain.nt[k]); //к = длинне цепочке-1. заносим цепочку в стек
+		for (int k = chain.size - 1; k >= 0; k--)
+			st.push(chain.nt[k]); //к = длинне цепочке-1. заносим цепочку в стек
 		return true;
 	};
 	bool Mfst::savestate(const Log::LOG &log) //сохранить состояние автомата
@@ -125,7 +136,8 @@ namespace MFST
 	{
 		bool rc = false;
 		short k = 0;
-		while (k < MFST_DIAGN_NUMBER&&lenta_position <= diagnosis[k].lenta_position)k++;
+		while (k < MFST_DIAGN_NUMBER&&lenta_position <= diagnosis[k].lenta_position)
+			k++;
 		if (rc = (k < MFST_DIAGN_NUMBER))
 		{
 			diagnosis[k] = MfstDiagnosis(lenta_position, prc_step, nrule, nrulechain);
@@ -144,23 +156,22 @@ namespace MFST
 		switch (rc_step)
 		{
 		case LENTA_END:         MFST_TRACE4(log, "------>LENTA_END")
-			*log.stream << "-------------------------------------------------------------------------------------" << std::endl;
+			*log.stream << "-------------------------------------------------------------------------------------" << endl;
 			sprintf_s(buf, MFST_DIAGN_MAXSIZE, "%d:всего строк %d, синтаксический анализ выполнен без ошибок ", 0, lenta_size);
-			*log.stream << std::setw(4) << std::left << 0 << ":всего строк " << lenta_size << ", синтаксический анализ выполнен без ошибок " << std::endl;
+			*log.stream << setw(4) << left << 0 << ":всего строк " << lenta_size << ", синтаксический анализ выполнен без ошибок " << endl;
 			rc = true;
 			break;
 		case NS_NORULE:         MFST_TRACE4(log, "------>NS_NORULE")
-			*log.stream << "-------------------------------------------------------------------------------------" << std::endl;
-			*log.stream << getDiagnosis(0, buf) << std::endl;
-			*log.stream << getDiagnosis(1, buf) << std::endl;
-			*log.stream << getDiagnosis(2, buf) << std::endl;
+			*log.stream << "-------------------------------------------------------------------------------------" << endl;
+			*log.stream << getDiagnosis(0, buf) << endl;
+			*log.stream << getDiagnosis(1, buf) << endl;
+			*log.stream << getDiagnosis(2, buf) << endl;
 			break;
 		case NS_NORULECHAIN:       MFST_TRACE4(log, "------>NS_NORULECHAIN") break;
 		case NS_ERROR:             MFST_TRACE4(log, "------>NS_ERROR") break;
 		case SURPRISE:             MFST_TRACE4(log, "------>SURPRISE") break;
 		};
 		return rc;
-
 	};
 
 	char* Mfst::getCSt(char*buf)
@@ -176,7 +187,8 @@ namespace MFST
 	char *Mfst::getCLenta(char*buf, short pos, short n)
 	{
 		short i, k = (pos + n < lenta_size) ? pos + n : lenta_size;
-		for (i = pos; i < k; i++)buf[i - pos] = GRB::Rule::Chain::alphabet_to_char(lenta[i]);
+		for (i = pos; i < k; i++) 
+			buf[i - pos] = GRB::Rule::Chain::alphabet_to_char(lenta[i]);
 		buf[i - pos] = 0x00;
 		return buf;
 	};

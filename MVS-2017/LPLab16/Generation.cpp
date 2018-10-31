@@ -1,11 +1,13 @@
 #include "stdafx.h"
 #include "Generation.h"
 
-ofstream outfile("D://FIRST//KP//MVS-2017//Generation.py");
 
+ofstream outfile("D://FIRST//KP//MVS-2017//Generation.py");
 bool isFunction = false;
 int idFunc;
 int buf;
+
+
 void Generation(LT::LexTable &Lextable, In::StToken *tokens, IT::IdTable &idtable)
 {
 	outfile << Head;
@@ -62,8 +64,13 @@ void Generation(LT::LexTable &Lextable, In::StToken *tokens, IT::IdTable &idtabl
 		{
 			int y;
 			y = Lextable.table[i].idxTI;
-			if (Lextable.table[i - 2].lexema == LEX_OUT) { outfile << idtable.table[y].id; }
-			else if (idtable.table[y].iddatatype == IT::STR || IT::NUM && Lextable.table[i - 2].lexema != LEX_OUT) { outfile << idtable.table[y].id; }
+			if (Lextable.table[i - 2].lexema == LEX_OUT)
+				outfile << idtable.table[y].id;
+			else
+			{
+				if (idtable.table[y].iddatatype == IT::STR || IT::NUM && Lextable.table[i - 2].lexema != LEX_OUT)
+					outfile << idtable.table[y].id;
+			}
 			break;
 		}
 		case LEX_EQUAL:
@@ -92,7 +99,7 @@ void Generation(LT::LexTable &Lextable, In::StToken *tokens, IT::IdTable &idtabl
 			if (tokens[i].isLiteral ==true)
 			{
 				if (tokens[i].isStr == true)
-				{ outfile << tokens[i].token; }
+					outfile << tokens[i].token; 
 				else
 				{
 					int tp;
@@ -101,9 +108,10 @@ void Generation(LT::LexTable &Lextable, In::StToken *tokens, IT::IdTable &idtabl
 					{
 						throw ERROR_THROW(6);
 					}
-					else if (tp < INT_MIN)
+					else
 					{
-						throw ERROR_THROW(6);
+						if (tp < INT_MIN)
+							throw ERROR_THROW(6);
 					}
 					outfile << tp;
 					break;

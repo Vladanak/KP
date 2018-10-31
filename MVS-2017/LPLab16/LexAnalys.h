@@ -5,6 +5,7 @@
 #include "FST.h"
 #include "Log.h"
 
+
 namespace LeX
 {
 	struct LEX  //структура для лексем

@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #define GRB_ERROR_SERIES 600
 
+
 namespace GRB
 {
 	Greibach greibach(NS('S'), TS('$'), 6,
@@ -85,7 +86,8 @@ namespace GRB
 		stbottomT = pstbottom;//дно стека
 		rules = new Rule[size = psize];//выделяем память
 		Rule*p = &r;
-		for (int i = 0; i < size; i++) rules[i] = p[i];//заполняем правила
+		for (int i = 0; i < size; i++) 
+			rules[i] = p[i];//заполняем правила
 	};
 	Greibach getGreibach() { return greibach; }; //получить грамматику
 
@@ -103,7 +105,8 @@ namespace GRB
 	Rule Greibach::getRule(short n) //получить правило по номеру
 	{
 		Rule rc;      //создаём правило рц
-		if (n < size)rc = rules[n];  //присваиваем правилу рц правило н
+		if (n < size)
+			rc = rules[n];  //присваиваем правилу рц правило н
 		return rc; //возвращаем созданное правило
 	};
 
@@ -119,15 +122,18 @@ namespace GRB
 	short Rule::getNextChain(GRBALPHABET t, Rule::Chain& pchain, short j) //получить следующую за j подходящую цепочку, вернуть её номер или -1 
 	{                                                                //(первый символ цепочки, возвращаемая цепочка, номер цепочки)
 		short rc = -1;
-		while (j < size&&chains[j].nt[0] != t)++j;
+		while (j < size&&chains[j].nt[0] != t)
+			++j;
 		rc = (j < size ? j : -1);
-		if (rc >= 0)pchain = chains[rc];
+		if (rc >= 0)
+			pchain = chains[rc];
 		return rc;
 	};
 
 	char* Rule::Chain::getCChain(char* b) //получить правую сторону правила
 	{
-		for (int i = 0; i < size; i++)b[i] = Chain::alphabet_to_char(nt[i]);
+		for (int i = 0; i < size; i++)
+			b[i] = Chain::alphabet_to_char(nt[i]);
 		b[size] = 0x00;
 		return b;
 	};

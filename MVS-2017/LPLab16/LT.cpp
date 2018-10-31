@@ -1,5 +1,6 @@
 #include "stdafx.h"
 
+
 namespace LT
 {
 	Entry::Entry(char lexema, int snn, int idxti)

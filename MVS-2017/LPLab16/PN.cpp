@@ -1,5 +1,6 @@
 #include "stdafx.h"
 
+
 int PN::prior(char znak)
 {
 	switch (znak)
@@ -14,6 +15,7 @@ int PN::prior(char znak)
 		return 0;
 	}
 }
+
 
 int PN::searchExpression(int index, LeX::LEX *tables) //поиск выражения
 {
@@ -34,7 +36,7 @@ int PN::searchExpression(int index, LeX::LEX *tables) //поиск выражения
 
 bool PN::CreatePolishNotation(LeX::LEX *tables)
 {
-	std::stack <LT::Entry> stack_operators;// хранятся операторы
+	stack <LT::Entry> stack_operators;// хранятся операторы
 	bool build = false;
 
 	int i = 0;
@@ -56,9 +58,7 @@ bool PN::CreatePolishNotation(LeX::LEX *tables)
 						|| tables->Lextable.table[i - 1].lexema == 'a' || tables->Lextable.table[i - 1].lexema == 's')  // Вернёт -1 если это не будет являтся переменной
 					{
 						while (tables->Lextable.table[i - 1].lexema != RH)
-						{
 							i++;
-						}
 						break;
 					}
 					stack_operators.push(tables->Lextable.table[i]);// ( добавляем в стек Операторов элемент таблицы лексем
@@ -97,18 +97,16 @@ bool PN::CreatePolishNotation(LeX::LEX *tables)
 							stack_operators.pop();//извлекает верхушку стека
 						}
 						if (!stack_operators.empty() && stack_operators.top().lexema == LH)// проверяем верхушку стека
-						{
 							stack_operators.push(tables->Lextable.table[i]);//добавить в стек операторов элемент таблицы лексем
-						}
 						if (stack_operators.empty())// проверяем верхушку стека
-						{
 							stack_operators.push(tables->Lextable.table[i]);//добавить в стек операторов элемент таблицы лексем
-						}
 					}
 					break;
 				default:
+				{
 					result[size++] = tables->Lextable.table[i];//заносим таблицу лексем в результат
 					break;
+				}
 				}
 			}
 		}

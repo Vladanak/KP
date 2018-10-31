@@ -2,7 +2,8 @@
 #define IN_MAX_LEN_TEXT 1024*1024  //директива для обозначения максимальной длины текста
 #define IN_CODE_ENDL '\n'          //директива для обозначения перехода на новую строку
 
-/*
+
+/* SIMBOLS:
 SEP - ( ) * + - = , / { } ;
 PR - пробел
 NS - новая строка
@@ -11,6 +12,7 @@ F - запрещённый
 T - разрешённый
 I - игнорируемый
 */
+
 
 #define IN_CODE_TABLE {\
 	IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::STAB, IN::T, IN::T, IN::T, IN::T, IN::T,\
@@ -31,6 +33,8 @@ I - игнорируемый
 	IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, \
 	IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T, IN::T \
 }
+
+
 namespace In
 {
 	struct StToken //структура для токена(слова)

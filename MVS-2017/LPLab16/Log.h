@@ -6,6 +6,7 @@
 #include "IT.h"
 #include "LT.h"
 
+
 namespace Log
 {
 	struct LOG

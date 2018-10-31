@@ -1,5 +1,6 @@
 #include "stdafx.h"
 
+
 namespace FST
 {
 	RELATION::RELATION(char c = 0x00, short ns = NULL)
@@ -39,6 +40,7 @@ namespace FST
 		};
 
 	};
+
 	FST::FST(short ns, NODE n, ...)
 	{
 		this->nodes = new NODE[ns];
@@ -53,6 +55,7 @@ namespace FST
 		};
 
 	}
+
 	FST::FST(char* s, FST& fst)
 	{
 		this->nodes = new NODE[fst.nstates];
@@ -67,6 +70,7 @@ namespace FST
 			i++;
 		};
 	}
+
 	bool execute(FST& fst)
 	{
 		int i, j;
@@ -82,15 +86,12 @@ namespace FST
 					for (j = 0; j < fst.nodes[i].n_relation; j++)
 					{
 						if (fst.nodes[i].relations[j].symbol == fst.string[fst.position])
-						{
 							rstates2[fst.nodes[i].relations[j].nnode] = fst.position + 1;
-						}
 					};
 				};
 			};
-			std::swap(fst.rstates, rstates2);
+			swap(fst.rstates, rstates2);
 		};
 		return (fst.rstates[fst.nstates - 1] == (strlen(fst.string)));
 	};
-
 }

@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #define MAX_STR_LIT_LEN 250
 
+
 namespace In
 {
 	void add_token(IN &StrIn, char* &buffer, int &posbuf, bool &isLiteral,bool &isStr) //функция добавления токена(слова)
@@ -17,7 +18,7 @@ namespace In
 	IN getin(wchar_t infile[], wchar_t logfile[]) // функция считывания из входного файла 
 	{
 		Log::LOG log = Log::getlog(logfile);
-		std::ifstream txtfile(infile);
+		ifstream txtfile(infile);
 		if (!txtfile.is_open())
 			throw ERROR_THROW(110);
 
@@ -37,8 +38,10 @@ namespace In
 			{
 			case IN::STAB:
 			{
-				if (strlen(buffer))	add_token(StrIn, buffer, posbuf, isLiteral,isStr);
-				if (p == IN_CODE_ENDL) StrIn.lines++;
+				if (strlen(buffer))
+					add_token(StrIn, buffer, posbuf, isLiteral,isStr);
+				if (p == IN_CODE_ENDL)
+					StrIn.lines++;
 				StrIn.size++;
 				isLiteral = false;
 				isStr = false;
@@ -55,7 +58,8 @@ namespace In
 					goto reload;
 					break;
 				}*/
-				if (strlen(buffer))	add_token(StrIn, buffer, posbuf, isLiteral,isStr);
+				if (strlen(buffer))
+					add_token(StrIn, buffer, posbuf, isLiteral,isStr);
 				buffer[posbuf] = p;
 				posbuf++;
 				add_token(StrIn, buffer, posbuf, isLiteral,isStr);
@@ -84,7 +88,8 @@ namespace In
 						buffer[posbuf] = p;
 						posbuf++;
 						StrIn.size++;
-						if (posbuf > MAX_STR_LIT_LEN) {throw ERROR_THROW(102);}
+						if (posbuf > MAX_STR_LIT_LEN)
+							throw ERROR_THROW(102);
 					}
 					buffer[posbuf] = p;
 					posbuf++;
@@ -107,7 +112,6 @@ namespace In
 				break;
 			}
 			}
-
 		}
 		return StrIn;
 	}

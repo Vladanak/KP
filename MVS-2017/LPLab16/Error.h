@@ -12,6 +12,7 @@
 									ERROR_ENTRY_NODEF10(id + 80), ERROR_ENTRY_NODEF10(id + 90)
 #define ERROR_MAX_ENTRY 1000					//количество элементов в таблице ошибок
 
+
 namespace Error
 {
 	struct ERROR								//тип исключения для throw ERROR_THROW | ERROR_THROW_IN b catch(ERROR)

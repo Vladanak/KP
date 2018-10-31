@@ -7,11 +7,12 @@
 #define LT_FLAG					"-lt" 
 #define IT_FLAG					"-it"
 
+
 namespace Parm
 {
 	struct PARM
 	{
-		wchar_t in[PARM_MAX_SIZE], out[PARM_MAX_SIZE], log[PARM_MAX_SIZE];//задаём параметры типа wchar_t с размером PARM_MAX_SIZE
+		wchar_t in[PARM_MAX_SIZE], out[PARM_MAX_SIZE], log[PARM_MAX_SIZE]; //задаём параметры типа wchar_t с размером PARM_MAX_SIZE
 		bool ltLogging, itLogging;
 	};
 

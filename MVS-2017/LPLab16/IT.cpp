@@ -1,5 +1,6 @@
 #include "stdafx.h"
 
+
 namespace IT
 {
 
@@ -54,16 +55,20 @@ namespace IT
 		{
 			int tempInt = atoi(token);
 			if (tempInt > INT_MAXSIZE)
-			{ throw ERROR_THROW(6); }
-			else if (tempInt < INT_MIN)
-			{ throw ERROR_THROW(6); }
-
+			{
+				throw ERROR_THROW(6);
+			}
+			else
+			{
+				if (tempInt < INT_MIN)
+					throw ERROR_THROW(6);
+			}
 			idtable.table[indTI].value.vint = tempInt;
 		}
 		else
 		{
 			if(idtable.table[indTI].value.vstr.len>TI_STR_MAXSIZE)
-			{ throw ERROR_THROW(6); }
+				throw ERROR_THROW(6); 
 			idtable.table[indTI].value.vstr.len = strlen(token);
 			strcpy_s(idtable.table[indTI].value.vstr.str, TI_STR_MAXSIZE, token);
 		}

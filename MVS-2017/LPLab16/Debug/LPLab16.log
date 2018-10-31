@@ -1,3 +1,23 @@
-﻿D:\Программы\VS\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: промежуточный каталог (Debug\) содержит файлы, которые используются совместно с другим проектом (LPLab16.vcxproj).  Это может привести к ошибкам очистки и перестроения.
-  LPLab16.vcxproj -> D:\FIRST\KP\MVS-2017\Debug\MVS-2017.exe
-  LPLab16.vcxproj -> D:\FIRST\KP\MVS-2017\Debug\MVS-2017.pdb (Partial PDB)
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: промежуточный каталог (Debug\) содержит файлы, которые используются совместно с другим проектом (LPLab16.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  stdafx.cpp
+  SA.cpp
+  PN.cpp
+  Parm.cpp
+  MFST.cpp
+c:\users\silent hill\desktop\kp\mvs-2017\lplab16\mfst.cpp(228): warning C4267: =: преобразование из "size_t" в "short"; возможна потеря данных
+  LT.cpp
+  MVS-2017.cpp
+  Log.cpp
+  LexAnalys.cpp
+  IT.cpp
+  In.cpp
+c:\users\silent hill\desktop\kp\mvs-2017\lplab16\in.cpp(34): warning C4102: reload: неиспользованная метка
+  Greibach.cpp
+  Generation.cpp
+  FST.cpp
+c:\users\silent hill\desktop\kp\mvs-2017\lplab16\fst.cpp(80): warning C4018: <: несоответствие типов со знаком и без знака
+  Error.cpp
+  Создание кода...
+  LINK : не найден или не выполнена сборка C:\Users\Silent Hill\Desktop\kp\MVS-2017\Debug\MVS-2017.exe при последней инкрементной компоновке; выполняется полная компоновка
+  LPLab16.vcxproj -> C:\Users\Silent Hill\Desktop\kp\MVS-2017\Debug\MVS-2017.exe
+  LPLab16.vcxproj -> C:\Users\Silent Hill\Desktop\kp\MVS-2017\Debug\MVS-2017.pdb (Partial PDB)
